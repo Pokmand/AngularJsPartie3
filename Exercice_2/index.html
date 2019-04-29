@@ -1,12 +1,22 @@
 <!DOCTYPE html>
-<html ng-app>
+<html>
   <head>
     <meta charset="utf-8">
     <title>Exercice 2</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.3/angular.min.js"></script>
   </head>
-  <body>
-    <div>
+  <body ng-app = "numberFilterExample">
+    <script>
+angular.module('numberFilterExample', [])
+  .controller('ExampleController', ['$scope', function($scope) {
+    $scope.val = 3.143497397384;
+  }]);
+</script>
+<div ng-controller="ExampleController">
+  <p> {{val}}</p>
+</div>
+    <div ng-controller="ExampleController">
+      <p> {{ val | number : 2}}</p>
     </div>
   </body>
 </html>
